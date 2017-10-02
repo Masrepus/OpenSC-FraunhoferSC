@@ -1049,7 +1049,7 @@ pkcs15_init_slot(struct sc_pkcs15_card *p15card, struct sc_pkcs11_slot *slot,
 			pin_info = NULL;
 		}
 		else   {
-			if (auth->label[0] && strncmp(auth->label, "PIN", 4) != 0)
+			if (auth->label[0] && strncmp(auth->label, "PIN", 4) != 0 && strncmp(auth->label, "User Pin", 9) != 0)
 				snprintf(label, sizeof(label), "%.*s (%s)", (int) sizeof auth->label, auth->label, p15card->tokeninfo->label);
 			else
 				/* The PIN label is empty or says just non-useful "PIN" */
