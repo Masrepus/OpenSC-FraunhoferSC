@@ -55,7 +55,7 @@ install:
       }
   - ps: $env:VSCOMNTOOLS="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools"
   - echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
-  - call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" %VCVARS_PLATFORM%
+  - call "%VSCOMNTOOLS%\..\..\VC\Auxiliary\Build\vcvarsall.bat" %VCVARS_PLATFORM%
   - cngsdk.msi /quiet
   - uname -a
   - set
