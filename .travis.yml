@@ -93,11 +93,4 @@ script:
       wine "C:/Program Files (x86)/Inno Setup 5/ISCC.exe" win32/OpenSC.iss;
     fi
 
-after_script:
-  # kill process started during compilation to finish the build, see
-  # https://github.com/moodlerooms/moodle-plugin-ci/issues/33 for details
-  - if [ ! -z "$HOST" ]; then
-      killall services.exe;
-    fi
-
 cache: ccache
