@@ -32,12 +32,8 @@ env:
 matrix:
   fast_finish: true
   include:
-    - compiler: clang
-      os: osx
     - compiler: gcc
       os: osx
-    - compiler: clang
-      os: linux
       env: ENABLE_DOC=--enable-doc
     - compiler: gcc
       os: linux
