@@ -20,8 +20,8 @@ configuration:
 
 environment:
   matrix:
-    - VSVER: 14
-    - VSVER: 12
+    - VSVER: 17
+    - VSVER: 15
 
 install:
   - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER -and $env:APPVEYOR_BUILD_NUMBER -ne ((Invoke-RestMethod `
