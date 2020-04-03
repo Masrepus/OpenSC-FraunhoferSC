@@ -1,12 +1,8 @@
 version: 0.17.0.{build}
 
 image:
-  # not compatible with OpenSSL 1.1.1:
-  # - Visual Studio 2013
-  # not compatible with WiX 3.11.2:
-  # - Visual Studio 2019
-  - Visual Studio 2012
-  - Visual Studio 2014
+  - Visual Studio 2015
+  - Visual Studio 2017
 
 platform:
   - x86
