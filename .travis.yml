@@ -49,7 +49,6 @@ before_install:
         brew uninstall libtool;
         brew install libtool;
         brew install gengetopt help2man;
-        brew install libxslt;
     fi
 
 before_script:
@@ -60,7 +59,7 @@ before_script:
     fi
   - ./bootstrap
   - if [ -z "$HOST" ]; then
-      CFLAGS="-Werror" ./configure $ENABLE_DOC --enable-dnie-ui;
+      CFLAGS="-Werror" ./configure $ENABLE_DOC --enable-dnie-ui --disable-man;
     else
       if [ ! -f "$(winepath 'C:/Program Files (x86)/Inno Setup 5/ISCC.exe')" ]; then
         /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16;
@@ -70,7 +69,7 @@ before_script:
       fi;
       unset CC;
       unset CXX;
-      ./configure --host=$HOST --disable-openssl --disable-readline --disable-zlib --prefix=${TRAVIS_BUILD_DIR}/win32/opensc || cat config.log;
+      ./configure --host=$HOST --disable-man --disable-openssl --disable-readline --disable-zlib --prefix=${TRAVIS_BUILD_DIR}/win32/opensc || cat config.log;
     fi
 
 script:
