@@ -46,6 +46,7 @@ typedef unsigned __int8 uint8_t;
 #endif
 
 #ifdef HAVE_WINSCARD_H
+#include <pcsclite.h>
 #include <winscard.h>
 #ifdef __APPLE__
 #include <wintypes.h>
