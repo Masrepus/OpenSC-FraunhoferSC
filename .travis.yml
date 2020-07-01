@@ -33,6 +33,8 @@ matrix:
   fast_finish: true
   include:
     - compiler: gcc
+      os: osx
+    - compiler: gcc
       os: linux
       env: ENABLE_DOC=--enable-doc
     - os: linux
