@@ -33,14 +33,15 @@ matrix:
   fast_finish: true
   include:
     - compiler: gcc
-      os: osx
-    - compiler: gcc
       os: linux
       env: ENABLE_DOC=--enable-doc
     - os: linux
       env: HOST=x86_64-w64-mingw32
     - os: linux
       env: HOST=i686-w64-mingw32
+  allow_failures:
+    - compiler: gcc
+      os: osx
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
